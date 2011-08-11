@@ -15,6 +15,18 @@ In your config.lua:
 
     require './oh-my-inbox/init'
 
+    mailbox = IMAP {
+      server = 'imap.example.com',
+      ...
+    }
+
+    # Filter trac emails
+    results = trac(mailbox.INBOX, 'myproject')
+    # Filter basecamp emails
+    results = basecamp(mailbox.INBOX, 'myproject')
+    # Filter googlegroups mails
+    results = googlegroups(mailbox.INBOX, 'mygroup')
+
 ## Credits
 
 Inspired by oh-my-zsh.
