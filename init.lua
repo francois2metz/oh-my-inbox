@@ -22,6 +22,6 @@ end
 --  inbox: your original inbox
 --  name: name of the basecamp
 --
-function basecamp(infox, name)
-   return infox:contain_field('Reply-To', name)
+function basecamp(inbox, name)
+   return inbox:contain_field('Reply-To', name)
 end
