@@ -13,7 +13,8 @@ http://inboxzero.com/
 
 In your config.lua:
 
-    require './oh-my-inbox/init'
+    package.path = package.path .. ";" .. os.getenv("HOME") .. "/.imapfilter/?/init.lua"
+    filters = require 'oh-my-inbox'
 
     mailbox = IMAP {
       server = 'imap.example.com',
@@ -21,11 +22,11 @@ In your config.lua:
     }
 
     # Filter trac emails
-    results = trac(mailbox.INBOX, 'myproject')
+    results = filters.trac(mailbox.INBOX, 'myproject')
     # Filter basecamp emails
-    results = basecamp(mailbox.INBOX, 'myproject')
+    results = filters.basecamp(mailbox.INBOX, 'myproject')
     # Filter googlegroups mails
-    results = googlegroups(mailbox.INBOX, 'mygroup')
+    results = filters.googlegroups(mailbox.INBOX, 'mygroup')
 
 ## Credits
 

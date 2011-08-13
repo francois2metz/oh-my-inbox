@@ -1,3 +1,5 @@
+module("oh-my-inbox")
+
 --
 -- search google groups mailinglist
 --  inbox: your original inbox
